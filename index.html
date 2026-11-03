@@ -1,76 +1,27 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#160020">
-  <title>PARAZ — Web Music</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080b20"><title>MUSICC — Your Music Space</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="app">
-    <header class="topbar">
-      <a class="brand" href="#">P<span>/</span></a>
-      <div class="top-label">YOUR PERSONAL MUSIC SPACE</div>
-      <span class="spark">✦</span>
-    </header>
-
-    <section class="hero">
-      <p class="eyebrow">LISTEN TO YOUR FAVORITES</p>
-      <h1>Daftar <span>Lagu.</span></h1>
-      <p class="sub">Pilih lagu dan nikmati video latar yang berbeda.</p>
-    </section>
-
-    <section class="layout">
-      <aside class="playlist-panel">
-        <div class="panel-heading">
-          <div><p class="eyebrow">YOUR COLLECTION</p><h2>Playlist</h2></div>
-          <span id="trackCount" class="count">06 TRACKS</span>
-        </div>
-        <div id="playlist" class="playlist"></div>
-        <p class="playlist-note">Setiap lagu bisa punya video background sendiri. Tambahkan file MP3 dan MP4 ke folder yang sesuai.</p>
-      </aside>
-
-      <section class="player-panel">
-        <div class="visual" id="visual">
-          <video id="backgroundVideo" class="background-video" muted playsinline loop preload="metadata"></video>
-          <div class="video-shade"></div>
-          <div class="visual-fallback" id="visualFallback"><div class="disc"><div class="disc-center">P<span>/</span></div></div></div>
-          <div class="visual-caption">NOW PLAYING · PARAZ MUSIC</div>
-        </div>
-
-        <div class="now-playing">
-          <div class="track-info">
-            <p class="eyebrow">NOW PLAYING</p>
-            <h2 id="songTitle">Paparazzi</h2>
-            <p id="songArtist">Lady Gaga</p>
-          </div>
-          <button id="likeButton" class="like-button" aria-label="Favorite">♡</button>
-        </div>
-
-        <div class="lyrics">
-          <div class="lyrics-head"><span>TRACK NOTE</span><span class="live-dot"></span></div>
-          <p id="lyricsText">Pilih lagu untuk mulai mendengarkan.</p>
-        </div>
-
-        <div class="progress-wrap">
-          <input id="progress" type="range" min="0" max="100" value="0" aria-label="Progress lagu">
-          <div class="time-row"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
-        </div>
-
-        <div class="controls">
-          <button id="shuffleButton" class="control side" aria-label="Shuffle">⤨</button>
-          <button id="prevButton" class="control" aria-label="Previous">|◀</button>
-          <button id="playButton" class="play-button" aria-label="Play">▶</button>
-          <button id="nextButton" class="control" aria-label="Next">▶|</button>
-          <button id="repeatButton" class="control side" aria-label="Repeat">↻</button>
-        </div>
-        <div class="volume-row"><span>♪</span><input id="volume" type="range" min="0" max="1" step="0.01" value="0.75"><span>♫</span></div>
-        <audio id="audio" preload="metadata"></audio>
-      </section>
-    </section>
-    <footer>MADE WITH <span>♥</span> · PARAZ MUSIC</footer>
-  </main>
-  <script src="script.js"></script>
-</body>
-</html>
+<main class="wrap">
+<header><a class="brand" href="#">MUSICC<span>✦</span></a><small>YOUR PERSONAL MUSIC SPACE</small></header>
+<section class="intro"><p>PLAY YOUR FAVORITES</p><h1>Feel the <i>music.</i></h1><div>Pick a song, press play, and enjoy the vibe.</div></section>
+<section class="content">
+<aside class="playlist panel"><div class="sectionhead"><div><p>YOUR COLLECTION</p><h2>Playlist</h2></div><small id="trackCount">03 TRACKS</small></div><div id="playlist"></div></aside>
+<section class="player panel">
+<div class="visual" id="visual"><div class="visualshade"></div><div class="visualtext">MUSICC <span>NOW PLAYING</span></div></div>
+<div class="trackline"><div><p>NOW PLAYING</p><h2 id="songTitle">Stereo Love</h2><small id="songArtist">Edward Maya & Vika Jigulina</small></div><button id="favorite" aria-label="Favorite">♡</button></div>
+<p class="status" id="status">Pilih lagu, lalu tekan tombol play.</p>
+<input id="progress" class="range" type="range" min="0" max="100" value="0">
+<div class="times"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
+<div class="controls"><button id="shuffle" aria-label="Acak">⤨</button><button id="previous" aria-label="Sebelumnya">|◀</button><button id="play" class="play" aria-label="Play">▶</button><button id="next" aria-label="Berikutnya">▶|</button><button id="repeat" aria-label="Ulangi">↻</button></div>
+<div class="volume">VOLUME <input id="volume" type="range" min="0" max="1" step=".01" value=".8"></div>
+<div class="lyric"><p>SONG NOTES</p><div id="songNote">A romantic dance-pop track.</div></div>
+<audio id="audio" preload="metadata"></audio>
+</section></section>
+<footer>MADE WITH ♥ · MUSICC</footer>
+</main><script src="script.js"></script>
+</body></html>
