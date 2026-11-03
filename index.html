@@ -1,45 +1,115 @@
 <!doctype html>
 <html lang="id">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#080b20"><title>MUSICC — Your Music Space</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b20">
+  <meta name="description" content="A personal space for favorite songs, photos, and memories.">
+  <title>PARAZ — Your Personal Space</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main class="wrap">
-<header><a class="brand" href="#">MUSICC<span>✦</span></a><small>YOUR PERSONAL MUSIC SPACE</small></header>
-<section class="intro"><p>PLAY YOUR FAVORITES</p><h1>Feel the <i>music.</i></h1><div>Pick a song, press play, and enjoy the vibe.</div></section>
-<section class="content">
-<aside class="playlist panel"><div class="sectionhead"><div><p>YOUR COLLECTION</p><h2>Playlist</h2></div><small id="trackCount">03 TRACKS</small></div><div id="playlist"></div></aside>
-<section class="player panel">
-<div class="visual" id="visual"><div class="visualshade"></div><div class="visualtext">MUSICC <span>NOW PLAYING</span></div></div>
-<div class="trackline"><div><p>NOW PLAYING</p><h2 id="songTitle">Stereo Love</h2><small id="songArtist">Edward Maya & Vika Jigulina</small></div><button id="favorite" aria-label="Favorite">♡</button></div>
-<p class="status" id="status">Pilih lagu, lalu tekan tombol play.</p>
-<input id="progress" class="range" type="range" min="0" max="100" value="0">
-<div class="times"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
-<div class="controls"><button id="shuffle" aria-label="Acak">⤨</button><button id="previous" aria-label="Sebelumnya">|◀</button><button id="play" class="play" aria-label="Play">▶</button><button id="next" aria-label="Berikutnya">▶|</button><button id="repeat" aria-label="Ulangi">↻</button></div>
-<div class="volume">VOLUME <input id="volume" type="range" min="0" max="1" step=".01" value=".8"></div>
-<div class="lyric"><p>SONG NOTES</p><div id="songNote">A romantic dance-pop track.</div></div>
-<h2>OUR SONGS ♡</h2>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
 
-<div class="music-player">
-  <p>Paparazzi - Lady Gaga</p>
-  <audio controls loop>
-    <source src="music/paparazzi.mp3" type="audio/mpeg">
-  </audio>
+  <main class="wrap">
+    <header class="topbar">
+      <a class="brand" href="#home">PARAZ<span>✦</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#music">Music</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#memories">Memories</a>
+      </nav>
+      <span class="top-note">MADE FOR THE MOMENTS</span>
+    </header>
 
-  <p>Flatline - Justin Bieber</p>
-  <audio controls loop>
-    <source src="music/flatline.mp3" type="audio/mpeg">
-  </audio>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span> YOUR PERSONAL MUSIC SPACE</p>
+        <h1>A little space<br>for <em>our memories.</em></h1>
+        <p class="hero-desc">Put your favorite songs on repeat, revisit the pictures, and keep the little moments close.</p>
+        <a class="hero-link" href="#music">EXPLORE THE SPACE <span>↘</span></a>
+      </div>
+      <div class="hero-orbit" aria-hidden="true">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="orbit-core">P<span>✦</span></div>
+        <span class="orbit-word word-one">PLAY</span>
+        <span class="orbit-word word-two">REPEAT</span>
+      </div>
+    </section>
 
-  <p>Stereo Love</p>
-  <audio controls loop>
-    <source src="music/stereo-love.mp3" type="audio/mpeg">
-  </audio>
-  
-</div>
-</section></section>
-<footer>MADE WITH ♥ · MUSICC</footer>
-</main><script src="script.js"></script>
-</body></html>
+    <section class="section music-section" id="music">
+      <div class="section-heading">
+        <div><p class="eyebrow">01 / THE SOUNDTRACK</p><h2>Our <em>playlist.</em></h2></div>
+        <span class="section-count">03 TRACKS</span>
+      </div>
+
+      <div class="music-layout">
+        <aside class="playlist panel">
+          <div class="panel-heading"><span>YOUR COLLECTION</span><span>♡</span></div>
+          <div id="playlist" class="playlist-items"></div>
+          <p class="playlist-hint">Choose a track to start listening.</p>
+        </aside>
+
+        <section class="player panel" aria-label="Music player">
+          <div class="player-top">
+            <span class="playing-label"><span class="equalizer"><i></i><i></i><i></i></span> NOW PLAYING</span>
+            <button id="favorite" class="icon-button" type="button" aria-label="Favorite this song">♡</button>
+          </div>
+          <div class="cover-art" id="coverArt">
+            <div class="cover-ring"></div>
+            <div class="cover-center">P<span>✦</span></div>
+            <div class="cover-caption">PARAZ SOUND SYSTEM</div>
+          </div>
+          <div class="track-info">
+            <div><p class="eyebrow">CURRENT TRACK</p><h3 id="songTitle">Stereo Love</h3><p id="songArtist">Edward Maya &amp; Vika Jigulina</p></div>
+            <span class="track-index" id="trackIndex">01 / 03</span>
+          </div>
+          <p class="status" id="status" aria-live="polite">Pilih lagu, lalu tekan play.</p>
+          <input id="progress" class="range progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Progress lagu">
+          <div class="time-row"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
+          <div class="controls">
+            <button id="shuffle" class="control-button" type="button" aria-label="Acak lagu" aria-pressed="false">⤨</button>
+            <button id="previous" class="control-button" type="button" aria-label="Lagu sebelumnya">|◀</button>
+            <button id="play" class="play-button" type="button" aria-label="Play">▶</button>
+            <button id="next" class="control-button" type="button" aria-label="Lagu berikutnya">▶|</button>
+            <button id="repeat" class="control-button" type="button" aria-label="Ulangi lagu" aria-pressed="false">↻</button>
+          </div>
+          <div class="volume-row"><span>VOLUME</span><input id="volume" class="range volume" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Volume"></div>
+          <div class="song-note"><span>✦</span><p id="songNote">A romantic dance-pop track.</p></div>
+          <audio id="audio" preload="metadata"></audio>
+        </section>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="section-heading">
+        <div><p class="eyebrow">02 / THE GALLERY</p><h2>Captured <em>moments.</em></h2></div>
+        <span class="section-count">03 PHOTOS</span>
+      </div>
+      <div class="photo-grid">
+        <figure class="photo-card photo-tall"><img src="images/fc9551c8975b17062bfb6358d1571398.jpg" alt="Gallery photo one" loading="lazy"><figcaption>MEMORY 01</figcaption></figure>
+        <figure class="photo-card"><img src="images/04f7249672f66d477d0482f9a37b0415.jpg" alt="Gallery photo two" loading="lazy"><figcaption>MEMORY 02</figcaption></figure>
+        <figure class="photo-card"><img src="images/2883c00eb19e6af283b2e074f3d8b3f0.jpg" alt="Gallery photo three" loading="lazy"><figcaption>MEMORY 03</figcaption></figure>
+      </div>
+      <p class="asset-note">Jika foto belum muncul, pastikan ketiga file JPG sudah diunggah ke folder <code>images</code>.</p>
+    </section>
+
+    <section class="section" id="memories">
+      <div class="section-heading">
+        <div><p class="eyebrow">03 / THE REPLAY</p><h2>Little <em>memories.</em></h2></div>
+        <span class="section-count">03 VIDEOS</span>
+      </div>
+      <div class="video-grid">
+        <article class="video-card"><video controls playsinline preload="metadata"><source src="videos/b30535d1e75e3a9a51cff910628043bc.mp4" type="video/mp4">Browser kamu tidak mendukung video.</video><p>CLIP 01 <span>✦</span></p></article>
+        <article class="video-card"><video controls playsinline preload="metadata"><source src="videos/9d3239bd797d17992adec428a3252d09.mp4" type="video/mp4">Browser kamu tidak mendukung video.</video><p>CLIP 02 <span>✦</span></p></article>
+        <article class="video-card"><video controls playsinline preload="metadata"><source src="videos/2e71362bae9bbeafbcc6b1ca1f0e8622.mp4" type="video/mp4">Browser kamu tidak mendukung video.</video><p>CLIP 03 <span>✦</span></p></article>
+      </div>
+      <p class="asset-note">Jika video belum muncul, unggah ketiga file MP4 ke folder <code>videos</code>.</p>
+    </section>
+
+    <footer><a class="brand" href="#home">PARAZ<span>✦</span></a><p>MADE WITH ♥ · KEEP THE GOOD MOMENTS</p><a href="#home" class="back-top">BACK TO TOP ↑</a></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
